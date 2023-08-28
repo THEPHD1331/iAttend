@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Demo1 from './components/cam/Demo1';
+// import Header from './components/header/Header'
+// import Cam from './components/cam/Cam'
+// import FaceRecognition from './components/FaceRecognition/FaceRecognition'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      {/* <Header/> */}
+      {/* <Cam/> */}
+      <Demo1/>
+      {/* <header className="App-header">
+        <h1>Face Recognition App</h1>
       </header>
+      <main>
+        <FaceRecognition />
+      </main> */}
     </div>
   );
 }
