@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -12,18 +12,14 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import { useAuth0 } from "@auth0/auth0-react";
-import Loading from "../loading/Loading";
+import { Link } from "react-router-dom";
+
+const pages = ["Demo1", "Lists"];
+const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function Header() {
-  const { loginWithRedirect, logout, user, isAuthenticated, isLoading } =
-    useAuth0();
-  const [anchorElNav, setAnchorElNav] = useState(null);
-  const [anchorElUser, setAnchorElUser] = useState(null);
-
-  if (isLoading) {
-    return <Loading />;
-  }
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -39,6 +35,7 @@ function Header() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
@@ -48,7 +45,7 @@ function Header() {
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            // href="/"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -59,7 +56,10 @@ function Header() {
               textDecoration: "none",
             }}
           >
-            LOGO
+         
+          LOGO
+         
+          
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -91,14 +91,23 @@ function Header() {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {/* mobile view */}
-              <MenuItem onClick={handleCloseNavMenu}>
-                <Typography textAlign="center">Home</Typography>
-              </MenuItem>
-              <MenuItem onClick={handleCloseNavMenu}>
-                <Typography textAlign="center">About</Typography>
-              </MenuItem>
-             
+            {/* mobile view */}
+             <MenuItem  onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">
+                    <Link to={`/`}>
+                   Home
+                    </Link>
+                  </Typography>
+                </MenuItem>
+              {pages.map((page) => (
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">
+                    <Link to={`/${page}`}>
+                    {page}
+                    </Link>
+                  </Typography>
+                </MenuItem>
+              ))}
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
@@ -121,30 +130,33 @@ function Header() {
             LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {/* desktop view */}
-            <Button
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "white", display: "block" }}
-            >
-              home
-            </Button>
-            <Button
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "white", display: "block" }}
-            >
-              About
-            </Button>
-            
+          {/* desktop view */}
+          <Button
+               
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "white", display: "block" }}
+              >
+                <Link style={{ textDecoration:'none', color:'white'}} to={`/`}>
+                   Home
+                    </Link>
+              </Button>
+            {pages.map((page) => (
+              <Button
+                key={page}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: "white", display: "block" }}
+              >
+                <Link style={{ textDecoration:'none', color:'white'}} to={`/${page}`}>
+                    {page}
+                    </Link>
+              </Button>
+            ))}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                {/* {isAuthenticated && (
-                  <Avatar alt="{user.name}" src={user.picture} />
-                )} */}
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-
               </IconButton>
             </Tooltip>
             <Menu
@@ -163,24 +175,11 @@ function Header() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              <MenuItem onClick={handleCloseUserMenu}>
-                <Typography textAlign="center">Profile</Typography>
-              </MenuItem>
-              {isAuthenticated ? (
-                <MenuItem
-                  onClick={() =>
-                    logout({
-                      logoutParams: { returnTo: window.location.origin },
-                    })
-                  }
-                >
-                  <Typography textAlign="center">Logout</Typography>
+              {settings.map((setting) => (
+                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
-              ) : (
-                <MenuItem onClick={() => loginWithRedirect()}>
-                  <Typography textAlign="center">LogIn</Typography>
-                </MenuItem>
-              )}
+              ))}
             </Menu>
           </Box>
         </Toolbar>
