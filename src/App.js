@@ -8,34 +8,28 @@ import Home from "./components/home/Home";
 import Demo1 from "./components/cam/Demo1";
 import Lists from "./components/lists/Lists";
 import Header from "./components/header/Header";
-// import Footer from "./components/footer/Footer";
+import Footer from "./components/footer/Footer";
 import ErrorPage from "./components/errorpage/ErrorPage";
 import AddStudent from "./components/lists/AddStudent";
+import StudentDetails from "./components/lists/StudentDetails";
+import About from "./components/about/About";
+import Profile from "./components/home/Profile";
 
 function App() {
   return (
     <div className="App">
-     
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="Demo1" element={<Demo1 />} />
-          <Route path="Lists" element={<Lists />} />
-          <Route path="AddStudent" element={<AddStudent />} />
-
-          <Route path="Error" element={<ErrorPage />} />
-        </Routes>
-        {/* <Footer /> */}
-    
-      {/* <Header/> */}
-      {/* <Cam/> */}
-
-      {/* <header className="App-header">
-        <h1>Face Recognition App</h1>
-      </header>
-      <main>
-        <FaceRecognition />
-      </main> */}
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="About" element={<About />} />
+        <Route path="Profile" element={<Profile />} />
+        <Route path="Demo1" element={<Demo1 />} />
+        <Route path="Lists" element={<Lists />} />
+        <Route path="Lists/:rollNo" element={<StudentDetails />} />
+        <Route path="AddStudent" element={<AddStudent />} />
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }

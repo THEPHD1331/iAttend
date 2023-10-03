@@ -14,7 +14,7 @@ return (
 	<h1 style={{ color: "green",
 				textAlign: "center",
 				marginTop: "-50px" }}>
-		GeeksforGeeks: A Computer Science Portal for Geeks
+		iAttend: A Face Recognition Attendance System
 	</h1>
 	<Container>
 		<Row>

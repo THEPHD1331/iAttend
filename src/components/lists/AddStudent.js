@@ -15,13 +15,13 @@ function AddStudent() {
         name: "",
         rollNo: "",
         attendance: "",
-        photo: null, // Add a photo property to hold the selected file
+        // photo: null, // Add a photo property to hold the selected file
       });
       const [formErrors, setFormErrors] = useState({
         name: false,
         rollNo: false,
         attendance: false,
-        photo: false,
+        // photo: false,
       });
      
       const handleGoBack = () => {
@@ -67,30 +67,30 @@ function AddStudent() {
           hasError = true;
         }
     
-        if (!formData.photo) {
-          errors.photo = true;
-          hasError = true;
-        }
+        // if (!formData.photo) {
+        //   errors.photo = true;
+        //   hasError = true;
+        // }
     
         setFormErrors(errors);
     
         if (!hasError) {
           try {
-            const formDataToSend = new FormData();
-            formDataToSend.append("name", formData.name);
-            formDataToSend.append("rollNo", formData.rollNo);
-            formDataToSend.append("attendance", formData.attendance);
-            formDataToSend.append("photo", formData.photo);
+            const formDataToSend = {
+              rollNo: parseInt(formData.rollNo), // Convert rollNo to integer
+              studentName: formData.name,
+              attendance: formData.attendance,
+            };
     
-            const apiUrl = "YOUR_API_ENDPOINT";
+            const apiUrl = "http://localhost:9595/api/students";
     
             await axios.post(apiUrl, formDataToSend);
     
             setFormData({
-              name: "",
               rollNo: "",
+              name: "",
               attendance: "",
-              photo: null,
+              // photo: null,
             });
     
             console.log("POST request successful");
@@ -148,14 +148,14 @@ function AddStudent() {
         error={formErrors.attendance}
         helperText={formErrors.attendance ? "Attendance is required" : ""}
     />
-    <p>Upload photo</p>
+    {/* <p>Upload photo</p>
      <input
         type="file"
         name="photo"
         accept="image/*" // Accept only image files
         onChange={handleChange}
         required
-      />
+      /> */}
     <Button type="submit" variant="contained" color="primary">
       Add Student
     </Button>

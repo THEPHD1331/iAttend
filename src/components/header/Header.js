@@ -14,8 +14,8 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "react-router-dom";
 
-const pages = ["Demo1", "Lists"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const pages = ["About", "Demo1", "Lists"];
+const settings = ["Profile", "Logout"];
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -177,7 +177,9 @@ function Header() {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                  <Link style={{ textDecoration:'none', color:'white'}} to={`/${setting}`}>
+                    <Typography textAlign="center">{setting}</Typography>
+                    </Link>
                 </MenuItem>
               ))}
             </Menu>

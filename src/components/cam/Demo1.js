@@ -18,6 +18,9 @@ const personData = [
   { imagePath: "harsh.png", name: "Harsh", id: "002" },
   { imagePath: "parag.png", name: "Parag", id: "003" },
   { imagePath: "paras.png", name: "Paras", id: "004" },
+  { imagePath: "Prasanna.jpeg", name: "Prasanna", id: "005" },
+  { imagePath: "sanket.jpeg", name: "Sanket", id: "006" },
+  { imagePath: "chinmay.jpeg", name: "Chinmay", id: "007" }
   // Add more persons as needed
 ];
 
@@ -96,7 +99,7 @@ function Demo1() {
         .withFaceLandmarks()
         .withFaceDescriptors();
 
-      const imagePaths = ["ameya.png", "harsh.png", "parag.png", "paras.png"];
+      const imagePaths = ["ameya.png", "harsh.png", "parag.png", "paras.png", "Prasanna.jpeg", "sanket.jpeg", "chinmay.jpeg"];
       const descriptors = await getDescriptorsFromImages(imagePaths);
 
       if (descriptors.length > 0 && detections.length > 0) {
@@ -153,8 +156,7 @@ function Demo1() {
     if (matchedPerson) {
       try {
         // Replace 'YOUR_API_ENDPOINT' with the actual endpoint where you want to send the data.
-        const apiUrl = 'YOUR_API_ENDPOINT';
-
+        const apiUrl = 'http://localhost:7171/api/students';
         const requestData = {
           name: matchedPerson.name,
           rollNo: matchedPerson.id,

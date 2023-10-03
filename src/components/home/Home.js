@@ -9,12 +9,12 @@ function Home() {
   return (
     <div className="main">
       <div id="1">
-        <h2>Welcome</h2>
+        <h2> Welcome to the Future of Attendance Tracking</h2>
         <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book.{" "}
+
+Say goodbye to the traditional paper-and-pen attendance registers. Embrace cutting-edge technology with our iATTEND, where the future meets education. <p> We understand that every second counts in the classroom, and that's why we've revolutionized attendance tracking for schools and educational institutions. </p>
+<p> Our system harnesses the power of facial recognition to effortlessly and accurately mark the attendance of students. With a simple glance, students are accounted for, giving educators more time to focus on what truly matters - teaching. Join us in shaping the future of education, one face at a time.{" "}
+</p>
         </p>
         <Stack spacing={2} direction="row">
           <Button variant="contained" >
