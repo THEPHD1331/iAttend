@@ -57,7 +57,7 @@ function Header() {
             }}
           >
          
-          LOGO
+          iATTEND
          
           
           </Typography>

@@ -47,8 +47,8 @@ function StudentDetails() {
         indexLabel: "{label}: {y}%",
         startAngle: -90,
         dataPoints: [
-          { y: 40, label: "A", color: "#FF5733" },
-          { y: 64, label: "P", color: "#33FFA8"  },
+          { y: 18, label: "A", color: "#FF5733" },
+          { y: 82, label: "P", color: "#33FFA8"  },
          
         ],
       },

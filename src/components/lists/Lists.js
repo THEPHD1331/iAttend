@@ -79,6 +79,7 @@ function Lists() {
                   <TableCell>Name</TableCell>
                   <TableCell>Attendance</TableCell>
                   <TableCell>Details</TableCell>
+                  {/* <TableCell>Date</TableCell> */}
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -94,6 +95,7 @@ function Lists() {
                       <Button variant="contained">View Details</Button>
                       </Link>
                       </TableCell>
+                      {/* <TableCell>{item.date}</TableCell> */}
                   </TableRow>
                 ))}
               </TableBody>

@@ -32,6 +32,7 @@ function Demo1() {
   const [isDetecting, setIsDetecting] = useState(false); // State to track face detection
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [recognizedPersonName, setRecognizedPersonName] = useState("");
+  const [currentDateTime, setCurrentDateTime] = useState(null);
 
   useEffect(() => {
     async function setupCamera() {
@@ -152,9 +153,14 @@ function Demo1() {
     return bestMatch;
   }
 
+
+
   async function handleSaveButtonClick() {
     if (matchedPerson) {
       try {
+        // Get the current date and time
+        const currentDate = new Date();
+        console.log("Current Date and Time:", currentDate);
         // Replace 'YOUR_API_ENDPOINT' with the actual endpoint where you want to send the data.
         const apiUrl = 'http://localhost:7171/api/students';
         const requestData = {
@@ -162,6 +168,7 @@ function Demo1() {
           rollNo: matchedPerson.id,
           imagePath: matchedPerson.imagePath,
           attendance: 'P',
+          dateTime: currentDate.toISOString(),
           // Add other data you want to send
         };
 
@@ -173,13 +180,16 @@ function Demo1() {
 
         // Handle the response here (e.g., show a success message)
         console.log('POST request successful:', response);
-
+ // Set the current date and time after the request is made
+ setCurrentDateTime(currentDate);
       } catch (error) {
         // Handle any errors that occur during the POST request
         console.error('Error making POST request:', error);
       }
     }
   }
+
+  
 
   return (
     <div className="App">
@@ -245,6 +255,7 @@ function Demo1() {
           <TableCell>Name</TableCell>
           <TableCell>ID</TableCell>
           <TableCell>Image</TableCell>
+          <TableCell>Date and time</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
@@ -257,6 +268,10 @@ function Demo1() {
               alt="Matched Person"
               width="100"
             />
+          </TableCell>
+          <TableCell>
+            {/* Display the current date and time or "N/A" if it's null */}
+          {currentDateTime ? currentDateTime.toISOString() : "N/A"}
           </TableCell>
         </TableRow>
       </TableBody>
