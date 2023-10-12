@@ -16,3 +16,17 @@ justify-content: center;
 #2{
 
 }
+
+#3one{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#4{
+    justify-content: center;
+    text-align: center;
+    width: 80%;
+    margin:auto;
+    padding: 3rem;
+    
+}

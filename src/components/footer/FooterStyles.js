@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const Box = styled.div`
-  padding: 80px 60px;
+  padding: 0px 60px;
   background: white; /* Change the background color to white */
-  width: 91%;
+  width: 100%;
   color: black; /* Change the text color to black */
 `;
 
@@ -35,7 +35,7 @@ export const Row = styled.div`
 export const FooterLink = styled.a`
   color: black; /* Change the text color to black */
   margin-bottom: 20px;
-  font-size: 18px;
+  font-size: 15px;
   text-decoration: none;
 
   &:hover {
@@ -45,8 +45,8 @@ export const FooterLink = styled.a`
 `;
 
 export const Heading = styled.p`
-  font-size: 24px;
-  color: black; /* Change the text color to black */
-  margin-bottom: 40px;
+  font-size: 15px;
+  color: black; 
+  margin-bottom: 5px;
   font-weight: bold;
 `;

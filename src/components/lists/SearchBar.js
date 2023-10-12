@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState }  from "react";
 import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -51,7 +51,14 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-function SearchBar() {
+function SearchBar({ onChange }) {
+  const [searchText, setSearchText] = useState("");
+
+  const handleInputChange = (event) => {
+    const query = event.target.value;
+    setSearchText(query);
+    onChange(query); // Call the parent component's onChange function with the search query
+  };
   return (
     <>
       <Search
@@ -68,6 +75,8 @@ function SearchBar() {
         <StyledInputBase
           placeholder="Search…"
           inputProps={{ "aria-label": "search" }}
+          value={searchText}
+          onChange={handleInputChange}
         />
       </Search>
     </>

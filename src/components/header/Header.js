@@ -15,7 +15,7 @@ import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "react-router-dom";
 
 const pages = ["About", "Demo1", "Lists"];
-const settings = ["Profile", "Logout"];
+const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -127,7 +127,7 @@ function Header() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            iATTEND
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
           {/* desktop view */}
@@ -177,9 +177,11 @@ function Header() {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Link style={{ textDecoration:'none', color:'white'}} to={`/${setting}`}>
-                    <Typography textAlign="center">{setting}</Typography>
+                  <Typography textAlign="center">
+                  <Link to={`/${setting}`}>
+                    {setting}
                     </Link>
+                   </Typography>
                 </MenuItem>
               ))}
             </Menu>

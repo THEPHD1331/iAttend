@@ -14,13 +14,13 @@ function AddStudent() {
     const [formData, setFormData] = useState({
         name: "",
         rollNo: "",
-        attendance: "",
+        year: "",
         // photo: null, // Add a photo property to hold the selected file
       });
       const [formErrors, setFormErrors] = useState({
         name: false,
         rollNo: false,
-        attendance: false,
+        year: false,
         // photo: false,
       });
      
@@ -62,8 +62,8 @@ function AddStudent() {
           hasError = true;
         }
     
-        if (!formData.attendance.trim()) {
-          errors.attendance = true;
+        if (!formData.year.trim()) {
+          errors.year = true;
           hasError = true;
         }
     
@@ -79,7 +79,7 @@ function AddStudent() {
             const formDataToSend = {
               rollNo: parseInt(formData.rollNo), // Convert rollNo to integer
               studentName: formData.name,
-              attendance: formData.attendance,
+              year: formData.year,
             };
     
             const apiUrl = "http://localhost:9595/api/students";
@@ -89,7 +89,7 @@ function AddStudent() {
             setFormData({
               rollNo: "",
               name: "",
-              attendance: "",
+              year: "",
               // photo: null,
             });
     
@@ -137,16 +137,16 @@ function AddStudent() {
         helperText={formErrors.rollNo ? "Roll No is required" : ""}
     />
     <TextField
-      name="attendance"
-        label="Attendance"
+      name="year"
+        label="Year"
         variant="outlined"
-        value={formData.attendance}
+        value={formData.year}
         onChange={handleChange}
         fullWidth
         required
         margin="normal"
-        error={formErrors.attendance}
-        helperText={formErrors.attendance ? "Attendance is required" : ""}
+        error={formErrors.year}
+        helperText={formErrors.year ? "Year is required" : ""}
     />
     {/* <p>Upload photo</p>
      <input

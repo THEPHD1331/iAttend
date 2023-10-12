@@ -168,7 +168,7 @@ function Demo1() {
           rollNo: matchedPerson.id,
           imagePath: matchedPerson.imagePath,
           attendance: 'P',
-          dateTime: currentDate.toISOString(),
+          date: currentDate.toISOString(),
           // Add other data you want to send
         };
 

@@ -17,35 +17,40 @@ import Loading from "../loading/Loading";
 
 function Lists() {
   const [data, setData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
   const [page, setPage] = useState(1);
   const itemsPerPage = 10;
-  const [loading, setLoading] = useState(true); // Initialize loading state
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Make a GET request to fetch the data
     axios
-      // .get("http://localhost:9595/api/students")
       .get("http://localhost:9595/api/students")
       .then((response) => {
-        // Set the data immediately upon receiving the response
         setData(response.data);
+        setLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
-      })
-      .finally(() => {
-        // Turn off loading after 3 seconds, regardless of success or failure
-        setTimeout(() => {
-          setLoading(false);
-        }, 3000);
+        setLoading(false);
       });
   }, []);
+
+  useEffect(() => {
+    const filtered = data.filter((item) => {
+      if (typeof item.studentName === 'string') {
+        return item.studentName.toLowerCase().includes(searchQuery.toLowerCase());
+      }
+      return false;
+    });
+    setFilteredData(filtered);
+  }, [data, searchQuery]);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
 
-  const displayedData = data.slice(
+  const displayedData = filteredData.slice(
     (page - 1) * itemsPerPage,
     page * itemsPerPage
   );
@@ -55,18 +60,18 @@ function Lists() {
       <h1>Student List</h1>
       <div className="a">
         <div className="b">
-          <SearchBar />
+          <SearchBar onChange={(query) => setSearchQuery(query)} />
         </div>
         <div className="c">
           <Button variant="contained">
-            <Link to={`/AddStudent`} id="btn">
+            <Link to="/AddStudent" id="btn">
               Add Student
             </Link>
           </Button>
         </div>
       </div>
 
-      {loading ? ( // Render the Loading component if loading is true
+      {loading ? (
         <Loading />
       ) : (
         <>
@@ -74,12 +79,10 @@ function Lists() {
             <Table>
               <TableHead>
                 <TableRow>
-                  {/* <TableCell>Date</TableCell> */}
                   <TableCell>Roll No</TableCell>
                   <TableCell>Name</TableCell>
-                  <TableCell>Attendance</TableCell>
+                  <TableCell>Year</TableCell>
                   <TableCell>Details</TableCell>
-                  {/* <TableCell>Date</TableCell> */}
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -89,13 +92,12 @@ function Lists() {
                       <Link to={`/Lists/${item.rollNo}`}>{item.rollNo}</Link>
                     </TableCell>
                     <TableCell>{item.studentName}</TableCell>
-                    <TableCell>{item.attendance}</TableCell>
+                    <TableCell>{item.year}</TableCell>
                     <TableCell>
                       <Link to={`/Lists/${item.rollNo}`}>
-                      <Button variant="contained">View Details</Button>
+                        <Button variant="contained">View Details</Button>
                       </Link>
-                      </TableCell>
-                      {/* <TableCell>{item.date}</TableCell> */}
+                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>
