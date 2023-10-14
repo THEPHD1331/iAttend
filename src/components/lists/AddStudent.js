@@ -4,23 +4,31 @@ import Button from "@mui/material/Button";
 import axios from "axios";
 import './lists.css'
 import { useNavigate } from "react-router-dom";
-
-
+import Snackbar from '@mui/material/Snackbar';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
+import MuiAlert from "@mui/material/Alert";
 
 function AddStudent() {
     const navigate = useNavigate();
+    const [notificationType, setNotificationType] = useState('success'); // 'success' or 'error'
+const [notificationMessage, setNotificationMessage] = useState('');
+const [isNotificationOpen, setIsNotificationOpen] = useState(false);
 
     
     const [formData, setFormData] = useState({
         name: "",
         rollNo: "",
         year: "",
+
         // photo: null, // Add a photo property to hold the selected file
       });
       const [formErrors, setFormErrors] = useState({
         name: false,
         rollNo: false,
         year: false,
+
+        // attendance: false,
         // photo: false,
       });
      
@@ -66,6 +74,7 @@ function AddStudent() {
           errors.year = true;
           hasError = true;
         }
+
     
         // if (!formData.photo) {
         //   errors.photo = true;
@@ -79,28 +88,43 @@ function AddStudent() {
             const formDataToSend = {
               rollNo: parseInt(formData.rollNo), // Convert rollNo to integer
               studentName: formData.name,
+              // attendance: formData.attendance,
               year: formData.year,
+
             };
+            console.log("Data to be sent:", formDataToSend); 
     
             const apiUrl = "http://localhost:9595/api/students";
     
             await axios.post(apiUrl, formDataToSend);
-    
+            setNotificationType('success');
+            setNotificationMessage('Student added successfully');
+            setIsNotificationOpen(true);
             setFormData({
-              rollNo: "",
               name: "",
+              rollNo: "",
               year: "",
+
+              // attendance: "",
               // photo: null,
             });
     
             console.log("POST request successful");
           } catch (error) {
+            setNotificationType('error');
+      setNotificationMessage('Error adding student');
+      setIsNotificationOpen(true);
             console.error("Error making POST request:", error);
           }
         }
       };
 
-
+      const handleNotificationClose = (event, reason) => {
+        if (reason === 'clickaway') {
+          return;
+        }
+        setIsNotificationOpen(false);
+      };
   return (
    <>
     <div id="one">
@@ -136,7 +160,7 @@ function AddStudent() {
         error={formErrors.rollNo}
         helperText={formErrors.rollNo ? "Roll No is required" : ""}
     />
-    <TextField
+      <TextField
       name="year"
         label="Year"
         variant="outlined"
@@ -148,6 +172,7 @@ function AddStudent() {
         error={formErrors.year}
         helperText={formErrors.year ? "Year is required" : ""}
     />
+
     {/* <p>Upload photo</p>
      <input
         type="file"
@@ -159,10 +184,24 @@ function AddStudent() {
     <Button type="submit" variant="contained" color="primary">
       Add Student
     </Button>
+    <Snackbar
+  open={isNotificationOpen}
+  autoHideDuration={4000} // Adjust the duration as needed
+  onClose={handleNotificationClose}
+>
+  <MuiAlert
+    elevation={6}
+    variant="filled"
+    onClose={handleNotificationClose}
+    severity={notificationType}
+  >
+    {notificationMessage}
+  </MuiAlert>
+</Snackbar>
   </form>
   </div>
    </>
   )
 }
 
-export default AddStudent
+export default AddStudent;

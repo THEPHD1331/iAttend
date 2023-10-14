@@ -18,13 +18,10 @@ const personData = [
   { imagePath: "harsh.png", name: "Harsh", id: "002" },
   { imagePath: "parag.png", name: "Parag", id: "003" },
   { imagePath: "paras.png", name: "Paras", id: "004" },
-  { imagePath: "Prasanna.jpeg", name: "Prasanna", id: "005" },
-  { imagePath: "sanket.jpeg", name: "Sanket", id: "006" },
-  { imagePath: "chinmay.jpeg", name: "Chinmay", id: "007" }
   // Add more persons as needed
 ];
 
-function Demo1() {
+function Scan() {
   const videoRef = useRef(null);
   const detectionIntervalRef = useRef(null);
   const [matchedPerson, setMatchedPerson] = useState(null); // State to store matched person data
@@ -32,7 +29,11 @@ function Demo1() {
   const [isDetecting, setIsDetecting] = useState(false); // State to track face detection
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [recognizedPersonName, setRecognizedPersonName] = useState("");
-  const [currentDateTime, setCurrentDateTime] = useState(null);
+  const [notificationType, setNotificationType] = useState('success'); // 'success' or 'error'
+const [notificationMessage, setNotificationMessage] = useState('');
+const [isNotificationOpen, setIsNotificationOpen] = useState(false);
+const [currentDateTime, setCurrentDateTime] = useState(null);
+
 
   useEffect(() => {
     async function setupCamera() {
@@ -100,7 +101,7 @@ function Demo1() {
         .withFaceLandmarks()
         .withFaceDescriptors();
 
-      const imagePaths = ["ameya.png", "harsh.png", "parag.png", "paras.png", "Prasanna.jpeg", "sanket.jpeg", "chinmay.jpeg"];
+      const imagePaths = ["ameya.png", "harsh.png", "parag.png", "paras.png"];
       const descriptors = await getDescriptorsFromImages(imagePaths);
 
       if (descriptors.length > 0 && detections.length > 0) {
@@ -153,12 +154,9 @@ function Demo1() {
     return bestMatch;
   }
 
-
-
   async function handleSaveButtonClick() {
     if (matchedPerson) {
       try {
-        // Get the current date and time
         const currentDate = new Date();
         console.log("Current Date and Time:", currentDate);
         // Replace 'YOUR_API_ENDPOINT' with the actual endpoint where you want to send the data.
@@ -178,19 +176,31 @@ function Demo1() {
           },
         });
 
+        // Success Notification
+      setNotificationType('success');
+      setNotificationMessage('Data saved successfully');
+      setIsNotificationOpen(true);
+
         // Handle the response here (e.g., show a success message)
         console.log('POST request successful:', response);
- // Set the current date and time after the request is made
- setCurrentDateTime(currentDate);
+
       } catch (error) {
+        // Error Notification
+      setNotificationType('error');
+      setNotificationMessage('Error saving data');
+      setIsNotificationOpen(true);
+
         // Handle any errors that occur during the POST request
         console.error('Error making POST request:', error);
       }
     }
   }
-
-  
-
+const handleNotificationClose = (event, reason) => {
+  if (reason === 'clickaway') {
+    return;
+  }
+  setIsNotificationOpen(false);
+};
   return (
     <div className="App">
       <h1>Face Recognition Attendance System</h1>
@@ -209,6 +219,20 @@ function Demo1() {
           Face recognized: {recognizedPersonName}
         </MuiAlert>
       </Snackbar>
+      <Snackbar
+  open={isNotificationOpen}
+  autoHideDuration={4000}
+  onClose={handleNotificationClose}
+>
+  <MuiAlert
+    elevation={6}
+    variant="filled"
+    onClose={handleNotificationClose}
+    severity={notificationType}
+  >
+    {notificationMessage}
+  </MuiAlert>
+</Snackbar>
       <div>
        <div>
        <Button variant="contained" onClick={toggleFaceDetection}>
@@ -284,4 +308,4 @@ function Demo1() {
   );
 }
 
-export default Demo1;
+export default Scan;

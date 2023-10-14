@@ -1,10 +1,21 @@
 .main{
     display: flex;
-    margin: 10px;
+    margin-top: 40px;
     padding: 10px;
     font-size: large;
     text-align: justify;
 }
+.home-container {
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+    background-image: url('/src/assest/new3.jpg'); /* Replace with the actual path to your image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* This keeps the background fixed while scrolling */
+    height: 80vh; /* Adjust as needed */
+  }
+
+  
+
 #1{
 justify-content: center;
 }
@@ -28,5 +39,6 @@ justify-content: center;
     width: 80%;
     margin:auto;
     padding: 3rem;
+    /* background: linear-gradient(to right, #00ffff 0%, #ccffff 100%) */
     
 }

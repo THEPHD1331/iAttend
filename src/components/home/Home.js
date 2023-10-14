@@ -34,43 +34,49 @@ function Home() {
 
   return (
     <>
+    <div className="home-container">
       <div>
         <div className="main">
-          <div id="1">
+          <div id="1" style={{fontSize: '36px', textAlign: 'center',fontFamily: 'Merriweather, serif'}}>
             <h1>
-              Welcome to iAttend – Your Gateway to Effortless Attendance
-              Management!
+              Welcome to iAttend 
             </h1>
-            At iAttend, we've redefined the way educational institutions track
+              <b>
+            Experience the Future of Attendance Tracking. 
+            We've redefined the way educational institutions track
             student attendance. Say goodbye to the hassle of manual roll-calls
-            and embrace a smarter, more efficient solution. Experience the
-            Future of Attendance Tracking <br />
-            <br />
-            Our cutting-edge Face Recognition Student Attendance System
+            and embrace a smarter, more efficient solution.  <br />
+            {/* Our cutting-edge Face Recognition Student Attendance System
             harnesses the power of advanced facial recognition technology to
-            revolutionize the classroom experience. It's as simple as a smile!
+            revolutionize the classroom experience. */}
+             {/* It's as simple as a smile!
             iAttend effortlessly identifies and records attendance, ensuring
-            accuracy and security with every interaction.
+          accuracy and security with every interaction. */}
+          <br />          <br />
+          Click START to begin
+              </b>
+           
             <br />
-            <br />
-            <Stack spacing={2} direction="row">
-              <Button variant="contained">
-                <Link to={`/Demo1`} id="btn">
-                  Start
+            <Stack spacing={3} direction="row" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '20vh' }}>
+              <Button variant="contained" style={{ fontSize: '1.5rem', padding: '1rem 3rem' }}>
+                <Link to={`/Scan`} id="btn" >
+                  START 
                 </Link>
               </Button>
             </Stack>
           </div>
-
-          <div id="2">
-            <img src={facehome} alt="face-home" />
           </div>
+
+          {/* <div id="2">
+            <img src={facehome} alt="face-home" />
+          </div> */}
         </div>
       </div>
 
       <div>
-        <h2>Why Choose iAttend?</h2>
+        <h1>Why Choose iAttend?</h1>
         <div>
+          <br></br>
           <Slider
             {...settings}
             nextArrow={<NextArrow className="slick-next" />} // Apply custom class "slick-next"
@@ -102,7 +108,7 @@ function Home() {
           })} */}
             {Features.map((item) => (
               <div key={item.id}>
-                <Card sx={{ maxWidth: 345 }}>
+                <Card sx={{ maxWidth: 345 ,}}>
                   <CardActionArea>
                     <CardMedia
                       component="img"
@@ -114,7 +120,7 @@ function Home() {
                       <Typography gutterBottom variant="h5" component="div">
                         {item.h}
                       </Typography>
-                      <Typography variant="body2" color="text.secondary">
+                      <Typography variant="body2" color="text.secondary" style={{ fontSize: '16px' }}>
                         {item.p}
                       </Typography>
                     </CardContent>
@@ -127,7 +133,7 @@ function Home() {
       </div>
 
       <div id="4">
-    <Card sx={{ maxWidth: '100%', margin: "8rem", height: "16rem"}}>
+    <Card sx={{ maxWidth: '100%', margin: "8rem", height: "16rem", background: 'linear-gradient(to top, #ccffff , #ffffff)'}}>
       <CardActionArea>
        
         <CardContent>
@@ -135,10 +141,10 @@ function Home() {
          <i><b> Join The iAttend Revolution!</b> </i>
           </Typography>
           <br></br>
-          <Typography variant="body2" color="text.secondary" style={{ fontSize: '18px' }}>         
+          <Typography variant="body2" color="text.tertiary" style={{ fontSize: '19px' }}>         
            Welcome to a future where attendance tracking is seamless, secure, and intelligent. <br></br> Join the iAttend revolution🚀 and embrace the new standard in attendance management.
           </Typography>
-          <Typography variant="body2" color="text.secondary" style={{ fontSize: '18px' }}>        
+          <Typography variant="body2" color="text.tertiary" style={{ fontSize: '19px' }}>        
             Ready to elevate your institution's attendance tracking experience? <br></br>Try iAttend today and experience the future of education, one smile😊 at a time.
           </Typography>
         </CardContent>

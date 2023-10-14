@@ -1,37 +1,37 @@
 [
     {
         "id": 1,
-        "img": "https://i.pinimg.com/564x/ed/03/75/ed0375ccc01ebb7db7274fab070a424b.jpg",
+        "img": "/images/efficiency.PNG",
         "h": "Efficiency Redefined",
-        "p": "iAttend marks a departure from traditional attendance-taking methods, saving valuable class time and administrative effort."
+        "p": "iAttend marks a departure from traditional attendance-taking methods, saving valuable time and administrative effort."
     },
     {
         "id": 2,
-        "img": "/images/cyber-security.png",
+        "img": "/images/cyber-security-new.png",
         "h": "Security First",
-        "p": "Rest easy knowing your students' privacy is safeguarded. iAttend adheres to the highest data security standards, ensuring the confidentiality of facial data."
+        "p": "Rest easy knowing your students' privacy is safeguarded. iAttend ensures the confidentiality of facial data."
     },
     {
         "id": 3,
-        "img": "https://img.freepik.com/free-vector/follow-me-social-business-theme-design_24877-50426.jpg?size=626&ext=jpg",
+        "img": "/images/user-friendly.PNG",
         "h": "User-Friendly",
         "p": "Our intuitive interface is designed with users in mind, making attendance tracking accessible to all."
     },
     {
         "id": 4,
-        "img": "/images/insights.PNG",
+        "img": "/images/insights-new.PNG",
         "h": "Powerful Insights",
         "p": " Dive into attendance analytics, identify trends, and make informed decisions to enhance your educational institution's operations."
     },
     {
         "id": 5,
-        "img": "https://i.pinimg.com/564x/ed/03/75/ed0375ccc01ebb7db7274fab070a424b.jpg",
+        "img": "/images/scalable.PNG",
         "h": "Scalable Solution",
         "p": " Whether you're managing a single classroom or an entire campus, iAttend scales effortlessly to meet your needs."
     },
     {
         "id": 6,
-        "img": "https://i.pinimg.com/564x/ed/03/75/ed0375ccc01ebb7db7274fab070a424b.jpg",
+        "img": "/images/future.PNG",
         "h": "Future-Ready",
         "p": "We're committed to innovation. iAttend is built to adapt, evolve, and stay at the forefront of attendance management technology."
     }

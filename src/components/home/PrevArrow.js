@@ -4,7 +4,7 @@ function PrevArrow(props) {
   const { onClick } = props;
   return (
     <div className="slick-arrow slick-prev" onClick={onClick}>
-      Previous
+      
     </div>
   );
 }

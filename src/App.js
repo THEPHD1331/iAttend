@@ -5,7 +5,6 @@ import "./App.css";
 // import FaceRecognition from './components/FaceRecognition/FaceRecognition'
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/home/Home";
-import Demo1 from "./components/cam/Demo1";
 import Lists from "./components/lists/Lists";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
@@ -14,6 +13,7 @@ import AddStudent from "./components/lists/AddStudent";
 import StudentDetails from "./components/lists/StudentDetails";
 import About from "./components/about/About";
 import Profile from "./components/home/Profile";
+import Scan from "./components/cam/Scan";
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="About" element={<About />} />
         <Route path="Profile" element={<Profile />} />
-        <Route path="Demo1" element={<Demo1 />} />
+        <Route path="Scan" element={<Scan />} />
         <Route path="Lists" element={<Lists />} />
         <Route path="Lists/:rollNo" element={<StudentDetails />} />
         <Route path="AddStudent" element={<AddStudent />} />

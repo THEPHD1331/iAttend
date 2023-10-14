@@ -19,6 +19,7 @@ const Profile = () => {
             width: 150,
             height: 150,
             backgroundColor: "primary.main",
+            margin: "0 auto",
           }}
         >
           <PersonIcon sx={{ fontSize: 100 }} />

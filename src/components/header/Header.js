@@ -14,8 +14,8 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "react-router-dom";
 
-const pages = ["About", "Demo1", "Lists"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const pages = ["About", "Scan", "Lists"];
+const settings = ["Profile", "Logout"];
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -37,7 +37,7 @@ function Header() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" style={{ position: 'fixed',top: '0', width: '100%', zIndex: '1000'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
