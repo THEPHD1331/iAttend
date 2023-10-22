@@ -87,22 +87,23 @@ const [isNotificationOpen, setIsNotificationOpen] = useState(false);
           try {
             const formDataToSend = {
               rollNo: parseInt(formData.rollNo), // Convert rollNo to integer
-              studentName: formData.name,
+              name: formData.name,
               // attendance: formData.attendance,
               year: formData.year,
 
             };
             console.log("Data to be sent:", formDataToSend); 
     
-            const apiUrl = "http://localhost:9595/api/students";
+            const apiUrl = "https://testforapipart2.vercel.app/api/student-api-2"; 
+            // https://localhost:7171/api/students
     
             await axios.post(apiUrl, formDataToSend);
             setNotificationType('success');
             setNotificationMessage('Student added successfully');
             setIsNotificationOpen(true);
             setFormData({
-              name: "",
               rollNo: "",
+              name: "",
               year: "",
 
               // attendance: "",

@@ -14,10 +14,15 @@ import Paper from '@mui/material/Paper';
 import axios from 'axios'; // Import Axios
 
 const personData = [
-  { imagePath: "ameya.png", name: "Ameya", id: "001" },
-  { imagePath: "harsh.png", name: "Harsh", id: "002" },
-  { imagePath: "parag.png", name: "Parag", id: "003" },
-  { imagePath: "paras.png", name: "Paras", id: "004" },
+  { imagePath: "ameya.png", name: "Ameya", id: "24" },
+  { imagePath: "harsh.png", name: "Harsh", id: "35" },
+  { imagePath: "parag.png", name: "Parag", id: "47" },
+  { imagePath: "paras.png", name: "Paras", id: "48" },
+  { imagePath: "Vishal.PNG", name: "Vishal", id: "72" },
+  { imagePath: "Hardik.png", name: "Hardik", id: "33" },
+  { imagePath: "Devashish.png", name: "Devashish", id: "32" },
+  { imagePath: "Abhisekh.jpeg", name: "Abhisek", id: "22" },
+
   // Add more persons as needed
 ];
 
@@ -101,7 +106,7 @@ const [currentDateTime, setCurrentDateTime] = useState(null);
         .withFaceLandmarks()
         .withFaceDescriptors();
 
-      const imagePaths = ["ameya.png", "harsh.png", "parag.png", "paras.png"];
+      const imagePaths = ["ameya.png", "harsh.png", "parag.png", "paras.png","Vishal.PNG","Hardik.png","Devashish.png","Abhisekh.jpeg"];
       const descriptors = await getDescriptorsFromImages(imagePaths);
 
       if (descriptors.length > 0 && detections.length > 0) {
@@ -111,6 +116,9 @@ const [currentDateTime, setCurrentDateTime] = useState(null);
             const matchedPersonData = personData[match.index]; // Replace with your data array
             setMatchedPerson(matchedPersonData);
             setRecognizedPersonName(matchedPersonData.name); // Set the recognized person's name
+            // Set the current date and time
+            const currentDate = new Date();
+            setCurrentDateTime(currentDate);
             setSnackbarOpen(true); // Open the Snackbar
             console.log("Match found:", match);
           }
@@ -159,14 +167,16 @@ const [currentDateTime, setCurrentDateTime] = useState(null);
       try {
         const currentDate = new Date();
         console.log("Current Date and Time:", currentDate);
-        // Replace 'YOUR_API_ENDPOINT' with the actual endpoint where you want to send the data.
-        const apiUrl = 'http://localhost:7171/api/students';
+      // Replace 'YOUR_API_ENDPOINT' with the actual endpoint where you want to send the data.
+      //  const apiUrl = 'http://localhost:7171/api/students';
+      const apiUrl = 'https://testforapipart2.vercel.app/api/student-api-1';
         const requestData = {
-          name: matchedPerson.name,
           rollNo: matchedPerson.id,
-          imagePath: matchedPerson.imagePath,
-          attendance: 'P',
-          date: currentDate.toISOString(),
+          name: matchedPerson.name,
+         // imagePath: matchedPerson.imagePath,
+         date: currentDate.toISOString(),
+        attendance: 'P'
+        
           // Add other data you want to send
         };
 

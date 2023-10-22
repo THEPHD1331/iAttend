@@ -1,17 +1,17 @@
 .main{
-    display: flex;
+    /* display: flex; */
     margin-top: 40px;
     padding: 10px;
     font-size: large;
     text-align: justify;
 }
 .home-container {
-    @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+    /* @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap'); */
     background-image: url('/src/assest/new3.jpg'); /* Replace with the actual path to your image */
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* This keeps the background fixed while scrolling */
-    height: 80vh; /* Adjust as needed */
+    height: 100vh; /* Adjust as needed */
   }
 
   

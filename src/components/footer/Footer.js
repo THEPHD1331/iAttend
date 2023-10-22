@@ -11,10 +11,10 @@ import {
 const Footer = () => {
   return (
     <Box>
-      <h1 style={{ color: "green", textAlign: "center", marginTop: "0px" }}>
+      <h1 style={{ color: "#0073e6", textAlign: "center", marginTop: "0px" , alignContent: 'center', marginRight: '110px'}}>
         iAttend: A Face Recognition Attendance System
       </h1>
-      <Container>
+      <Container style={{maxWidth: '900px', marginRight: '350px'}}>
         <Row>
           <Column>
             {/* <Heading>Services</Heading>
@@ -61,7 +61,8 @@ const Footer = () => {
             </FooterLink> */}
           </Column>
         </Row>
-      </Container> iAttend 2023 © All rights reserved 
+        <p >iAttend 2023 © All rights reserved </p>  
+      </Container> 
     </Box>
   );
 };

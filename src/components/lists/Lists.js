@@ -23,11 +23,25 @@ function Lists() {
   const itemsPerPage = 10;
   const [loading, setLoading] = useState(true);
 
+  // useEffect(() => {
+  //   axios
+  //   .get("https://testforapipart2.vercel.app/api/student-api-2")
+  //     // .get("http://localhost:9595/api/students")
+  //     .then((response) => {
+  //       setData(response.data);
+  //       setLoading(false);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching data:", error);
+  //       setLoading(false);
+  //     });
+  // }, []);
+
   useEffect(() => {
     axios
-      .get("http://localhost:9595/api/students")
+      .get("https://testforapipart2.vercel.app/api/student-api-2")
       .then((response) => {
-        setData(response.data);
+        setData(response.data.userData);
         setLoading(false);
       })
       .catch((error) => {
@@ -36,24 +50,24 @@ function Lists() {
       });
   }, []);
 
-  useEffect(() => {
-    const filtered = data.filter((item) => {
-      if (typeof item.studentName === 'string') {
-        return item.studentName.toLowerCase().includes(searchQuery.toLowerCase());
-      }
-      return false;
-    });
-    setFilteredData(filtered);
-  }, [data, searchQuery]);
+  // useEffect(() => {
+  //   const filtered = data.filter((item) => {
+  //     if (typeof item.name === 'string') {
+  //       return item.name.toLowerCase().includes(searchQuery.toLowerCase());
+  //     }
+  //     return false;
+  //   });
+  //   setFilteredData(filtered);
+  // }, [data, searchQuery]);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
 
-  const displayedData = filteredData.slice(
-    (page - 1) * itemsPerPage,
-    page * itemsPerPage
-  );
+  // const displayedData = filteredData.slice(
+  //   (page - 1) * itemsPerPage,
+  //   page * itemsPerPage
+  // );
 
   return (
     <div>
@@ -75,7 +89,7 @@ function Lists() {
         <Loading />
       ) : (
         <>
-          <TableContainer component={Paper}>
+          {/* <TableContainer component={Paper}>
             <Table>
               <TableHead>
                 <TableRow>
@@ -86,12 +100,12 @@ function Lists() {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {displayedData.map((item, index) => (
+                {data.map((item, index) => (
                   <TableRow key={index}>
                     <TableCell>
                       <Link to={`/Lists/${item.rollNo}`}>{item.rollNo}</Link>
                     </TableCell>
-                    <TableCell>{item.studentName}</TableCell>
+                    <TableCell>{item.name}</TableCell>
                     <TableCell>{item.year}</TableCell>
                     <TableCell>
                       <Link to={`/Lists/${item.rollNo}`}>
@@ -102,7 +116,36 @@ function Lists() {
                 ))}
               </TableBody>
             </Table>
-          </TableContainer>
+          </TableContainer> */}
+
+           <TableContainer component={Paper}>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Roll No</TableCell>
+                <TableCell>Name</TableCell>
+                <TableCell>Year</TableCell>
+                <TableCell>View Details</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {data.map((item, index) => (
+                <TableRow key={index}>
+                  <TableCell>
+                    <Link to={`/Lists/${item.roll}`}>{item.roll}</Link>
+                  </TableCell>
+                  <TableCell>{item.name}</TableCell>
+                  <TableCell>{item.year}</TableCell>
+                  <TableCell>
+                    <Link to={`/Lists/${item.roll}`}>
+                      <Button variant="contained">View Details</Button>
+                    </Link>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
         </>
       )}
 

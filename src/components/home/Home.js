@@ -16,6 +16,7 @@ import "slick-carousel/slick/slick-theme.css";
 import NextArrow from "./NextArrow";
 import PrevArrow from "./PrevArrow";
 import "./Carousel.css";
+import { TypeAnimation } from 'react-type-animation';
 
 function Home() {
   const settings = {
@@ -37,15 +38,46 @@ function Home() {
     <div className="home-container">
       <div>
         <div className="main">
-          <div id="1" style={{fontSize: '36px', textAlign: 'center',fontFamily: 'Merriweather, serif'}}>
+          <div id="1" style={{fontSize: '32px', textAlign: 'center',
+          // fontFamily: 'Merriweather, serif'
+          }}>
             <h1>
               Welcome to iAttend 
             </h1>
+
+            <TypeAnimation
+      sequence={[
+        // Same substring at the start will only be typed out once, initially
+       'EXPERIENCE THE FUTURE OF ATTENDANCE TRACKING ' ,
+        1000, // wait 1s before replacing "Mice" with "Hamsters"
+        ]}
+      wrapper="span"
+      speed={40}
+      style={{ fontSize: '1.5em', display: 'inline-block' ,fontWeight: 'bold'}}
+      repeat={Infinity}
+    />
+<br/> <br/> 
+<TypeAnimation
+      sequence={[
+        // Same substring at the start will only be typed out once, initially
+       'SAVE TIME' ,
+        1500, // wait 1s before replacing "Mice" with "Hamsters"
+        'SAVE ENERGY',
+        1500,
+        'SAVE PAPER',
+        1500
+        ]}
+      wrapper="span"
+      speed={40}
+      style={{ fontSize: '1.5em', display: 'inline-block' ,fontWeight: 'bold', color: '#0073e6'}}
+      repeat={Infinity}
+    />
               <b>
-            Experience the Future of Attendance Tracking. 
-            We've redefined the way educational institutions track
-            student attendance. Say goodbye to the hassle of manual roll-calls
-            and embrace a smarter, more efficient solution.  <br />
+           
+            {/* We've redefined the way educational institutions track
+            student attendance. */} <br/><br/>
+             {/* Say goodbye to the hassle of manual roll-calls
+            and embrace a smarter, more efficient solution.  <br /> */}
             {/* Our cutting-edge Face Recognition Student Attendance System
             harnesses the power of advanced facial recognition technology to
             revolutionize the classroom experience. */}
@@ -72,7 +104,7 @@ function Home() {
           </div> */}
         </div>
       </div>
-
+<br/>
       <div>
         <h1>Why Choose iAttend?</h1>
         <div>
@@ -108,7 +140,7 @@ function Home() {
           })} */}
             {Features.map((item) => (
               <div key={item.id}>
-                <Card sx={{ maxWidth: 345 ,}}>
+                <Card sx={{ maxWidth: 345 }}>
                   <CardActionArea>
                     <CardMedia
                       component="img"
@@ -117,10 +149,10 @@ function Home() {
                       alt="Card Image"
                     />
                     <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
-                        {item.h}
+                      <Typography gutterBottom variant="h5" component="div" style={{ fontSize: '25px' }}>
+                  <b>  {item.h}</b>    
                       </Typography>
-                      <Typography variant="body2" color="text.secondary" style={{ fontSize: '16px' }}>
+                      <Typography variant="body2" color="text.tertiary" style={{ fontSize: '16px' }}>
                         {item.p}
                       </Typography>
                     </CardContent>
@@ -137,15 +169,17 @@ function Home() {
       <CardActionArea>
        
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div" style={{ fontSize: '30px' }}>
+          <Typography gutterBottom variant="h5" component="div" style={{ fontSize: '32px' }}>
          <i><b> Join The iAttend Revolution!</b> </i>
           </Typography>
           <br></br>
-          <Typography variant="body2" color="text.tertiary" style={{ fontSize: '19px' }}>         
-           Welcome to a future where attendance tracking is seamless, secure, and intelligent. <br></br> Join the iAttend revolution🚀 and embrace the new standard in attendance management.
+          <Typography variant="body2" color="text.tertiary" style={{ fontSize: '20px' }}>         
+           Welcome to a future where attendance tracking is seamless, secure, and intelligent. <br></br> Join the iAttend revolution and embrace the new standard in attendance management.
           </Typography>
-          <Typography variant="body2" color="text.tertiary" style={{ fontSize: '19px' }}>        
-            Ready to elevate your institution's attendance tracking experience? <br></br>Try iAttend today and experience the future of education, one smile😊 at a time.
+          <Typography variant="body2" color="text.tertiary" style={{ fontSize: '20px' }}>        
+          Our cutting-edge Face Recognition Student Attendance System
+            harnesses the power of <br/> advanced facial recognition technology to
+            revolutionize the classroom experience.
           </Typography>
         </CardContent>
       </CardActionArea>
