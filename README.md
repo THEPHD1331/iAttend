@@ -34,7 +34,7 @@ Dive into attendance analytics, identify trends, and make informed decisions to 
 We're committed to innovation. iAttend is built to adapt, evolve, and stay at the forefront of attendance management technology.
 <br/>
 
-## Our Team
+## Our Team - GCOEN CSE
 
 [Paras Dongre](https://github.com/THEPHD1331) (Team Lead)
 
