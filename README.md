@@ -25,7 +25,7 @@ Save yourself from managing vast amounts of registers for attendance. Just sit b
 
 Rest easy knowing your students' privacy is safeguarded. iAttend ensures the confidentiality of facial data.
 
-### Analytics 
+### Insights 
 
 Dive into attendance analytics, identify trends, and make informed decisions to enhance your educational institution's operations.
 
@@ -36,15 +36,17 @@ We're committed to innovation. iAttend is built to adapt, evolve, and stay at th
 
 ## Our Team - GCOEN CSE
 
-[Paras Dongre](https://github.com/THEPHD1331) (Team Lead)
+### [*Paras Dongre*](https://github.com/THEPHD1331) (Team Lead)
 
-[Ameya Thakur](https://github.com/Ameya21885)
+### [*Ameya Thakur*](https://github.com/Ameya21885)
 
-[Parag Tekade](https://github.com/ParagTekade)
+### [*Parag Tekade*](https://github.com/ParagTekade)
 
-[Harsh Masane]()
+### [*Harsh Masane*]()
 
 
 ## Visit iAttend
 
-[iAttend Official](https://iattend.vercel.app)
+### [Website](https://iattend.vercel.app)         
+
+### [**Blog**](https://iattendgcoen.wordpress.com/2023/10/14/iattend/)
