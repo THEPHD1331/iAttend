@@ -6,11 +6,10 @@ We've redefined the way educational institutions track student attendance.
              Say goodbye to the hassle of manual roll-calls
             and embrace a smarter, more efficient solution.  <br /> <br />
             Our cutting-edge Face Recognition Student Attendance System
-            harnesses the power of advanced facial recognition technology to
-            revolutionize the classroom experience.
-             It's as simple as a smile!
-            iAttend effortlessly identifies and records attendance, ensuring
-          accuracy and security with every interaction.
+            harnesses the power of advanced facial recognition technology to revolutionize the classroom experience.
+             It's as simple as a smile iAttend effortlessly identifies and records attendance, ensuring accuracy and security with every interaction.
+
+    
 
 ## Why iAttend? 
 
@@ -33,6 +32,19 @@ Dive into attendance analytics, identify trends, and make informed decisions to 
 ### Future-ready
 
 We're committed to innovation. iAttend is built to adapt, evolve, and stay at the forefront of attendance management technology.
+<br/>
+
+## Our Team
+
+[Paras Dongre](https://github.com/THEPHD1331) (Team Lead)
+
+[Ameya Thakur](https://github.com/Ameya21885)
+
+[Parag Tekade](https://github.com/ParagTekade)
+
+[Harsh Masane]()
 
 
+## Visit iAttend
 
+[iAttend Official](https://iattend.vercel.app)
