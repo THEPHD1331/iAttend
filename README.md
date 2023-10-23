@@ -42,7 +42,7 @@ We're committed to innovation. iAttend is built to adapt, evolve, and stay at th
 
 ### [*Parag Tekade*](https://github.com/ParagTekade)
 
-### [*Harsh Masane*]()
+### [*Harsh Masane*](https://github.com/harsh27-tech)
 
 
 ## Visit iAttend
