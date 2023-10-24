@@ -25,8 +25,8 @@ const Footer = () => {
           </Column>
           <Column>
             <Heading>About Us</Heading>
-            <FooterLink href="/About">Team</FooterLink>
-            <FooterLink href="/About">Vision</FooterLink>
+            <FooterLink href="/About">Team & Vision</FooterLink>
+            <FooterLink href="https://iattendgcoen.wordpress.com/2023/10/14/iattend/">Blog</FooterLink>
             {/* <FooterLink href="#">Testimonials</FooterLink> */}
           </Column>
           <Column>
