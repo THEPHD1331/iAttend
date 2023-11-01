@@ -1,0 +1,37 @@
+/* Carousel.css */
+
+/* Style for the container of the Next and Previous buttons */
+.carousel-button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    position: relative; /* Add position: relative */
+  }
+  
+  /* Style for the Next and Previous buttons */
+  .slick-next,
+  .slick-prev {
+    font-size: 16px;
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Text color */
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute; /* Add position: absolute */
+    z-index: 1; /* Set a higher z-index to bring the buttons to the front */
+  }
+  
+  /* Hover effect for the Next and Previous buttons */
+  .slick-next:hover,
+  .slick-prev:hover {
+    background-color: #0056b3; /* Change the background color on hover */
+  }
+  
+  /* Style for the disabled Next and Previous buttons (when not clickable) */
+  .slick-disabled {
+    opacity: 0.5; /* Reduce opacity for disabled buttons */
+    cursor: not-allowed; /* Change cursor for disabled buttons */
+  }
