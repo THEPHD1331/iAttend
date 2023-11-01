@@ -34,6 +34,11 @@ Dive into attendance analytics, identify trends, and make informed decisions to 
 We're committed to innovation. iAttend is built to adapt, evolve, and stay at the forefront of attendance management technology.
 <br/>
 
+## Backend APIs 
+### [Student-API-1](https://github.com/THEPHD1331/StudentApi)
+
+### [Student-API-2](https://github.com/THEPHD1331/StudentAPI-New)
+
 ## Our Team - GCOEN CSE
 
 ### [*Paras Dongre*](https://github.com/THEPHD1331) (Team Lead)
