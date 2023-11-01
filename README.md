@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# iAttend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the future of attendance tracking. 
 
-## Available Scripts
+We've redefined the way educational institutions track student attendance.
+             Say goodbye to the hassle of manual roll-calls
+            and embrace a smarter, more efficient solution.  <br /> <br />
+            Our cutting-edge Face Recognition Student Attendance System
+            harnesses the power of advanced facial recognition technology to revolutionize the classroom experience.
+             It's as simple as a smile iAttend effortlessly identifies and records attendance, ensuring accuracy and security with every interaction.
 
-In the project directory, you can run:
+    
 
-### `npm start`
+## Why iAttend? 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Efficient
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+iAttend marks a departure from traditional attendance-taking methods, saving valuable time and administrative effort.
 
-### `npm test`
+### Paperless
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Save yourself from managing vast amounts of registers for attendance. Just sit back and let iAttend manage it.
 
-### `npm run build`
+### Secure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Rest easy knowing your students' privacy is safeguarded. iAttend ensures the confidentiality of facial data.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Insights 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Dive into attendance analytics, identify trends, and make informed decisions to enhance your educational institution's operations.
 
-### `npm run eject`
+### Future-ready
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+We're committed to innovation. iAttend is built to adapt, evolve, and stay at the forefront of attendance management technology.
+<br/>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Our Team - GCOEN CSE
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### [*Paras Dongre*](https://github.com/THEPHD1331) (Team Lead)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### [*Ameya Thakur*](https://github.com/Ameya21885)
 
-## Learn More
+### [*Parag Tekade*](https://github.com/ParagTekade)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### [*Harsh Masane*](https://github.com/harsh27-tech)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Visit iAttend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### [Website](https://iattend.vercel.app)         
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### [**Blog**](https://iattendgcoen.wordpress.com/2023/10/14/iattend/)
